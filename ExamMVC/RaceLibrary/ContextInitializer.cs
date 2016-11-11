@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace RaceLibrary
 {
-    class ContextInitializer : DropCreateDatabaseAlways<Context>
+    class ContextInitializer : DropCreateDatabaseIfModelChanges<Context>
     {
         protected override void Seed(Context context)
         {
