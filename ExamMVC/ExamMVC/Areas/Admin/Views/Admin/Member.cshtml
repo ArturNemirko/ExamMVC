@@ -1,0 +1,15 @@
+﻿@model List<RaceLibrary.Participant>
+
+@foreach (var part in Model)
+{
+    <br />
+    @Html.Label(part.Name)
+    <br />
+    using (Html.BeginForm("EditRace", "Admin", FormMethod.Post))
+    {
+        @Html.Hidden("id", part.Id)
+        @Html.TextBox("vote",part.Vote.ToString())
+        <input type="submit" value="Change vote" />
+    }
+}
+
