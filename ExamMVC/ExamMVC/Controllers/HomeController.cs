@@ -12,6 +12,8 @@ namespace ExamMVC.Controllers
         RaceService _service = new RaceService();
         public ActionResult Index()
         {
+            if(Request.Browser.Browser == "InternetExplorer")
+                return View("ErrorIE");
             return View(_service.GetAllParticipants().ToList());
         }
     }
